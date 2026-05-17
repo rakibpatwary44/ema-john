@@ -24,7 +24,7 @@ const Products = (props) => {
           </small>
         </p>
         <div className="card-btn">
-          <button onClick={() => props.handelAddCard()}>
+          <button onClick={() => props.handelAddCard(props.product)}>
             <ShoppingCart size={20} /> Add to card
           </button>
         </div>
