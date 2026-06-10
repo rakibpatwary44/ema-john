@@ -1,4 +1,6 @@
+import { ShoppingCart } from "lucide-react";
 import React from "react";
+import { Link } from "react-router";
 
 const Card = (props) => {
   console.log(props);
@@ -37,6 +39,11 @@ const Card = (props) => {
         <small>Vat + tex : {formatNumber(tex)}</small>
       </p>
       <p>Total Price : {grandTotal}</p>
+      <Link to="/orderReview" className="card-btn ">
+        <button>
+          <ShoppingCart size={20} /> Order Review
+        </button>
+      </Link>
     </div>
   );
 };
