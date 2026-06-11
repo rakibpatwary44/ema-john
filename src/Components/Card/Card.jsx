@@ -3,12 +3,12 @@ import React from "react";
 import { Link } from "react-router";
 
 const Card = (props) => {
-  console.log(props);
+  console.log(props.children);
   const card = props.card;
   let total = 0;
   for (let i = 0; i < card.length; i++) {
     const product = card[i];
-    total = total + product.price;
+    total = total + product.price * product.quantity;
   }
 
   let shaping = 0;
@@ -39,11 +39,7 @@ const Card = (props) => {
         <small>Vat + tex : {formatNumber(tex)}</small>
       </p>
       <p>Total Price : {grandTotal}</p>
-      <Link to="/orderReview" className="card-btn ">
-        <button>
-          <ShoppingCart size={20} /> Order Review
-        </button>
-      </Link>
+      {props.children}
     </div>
   );
 };

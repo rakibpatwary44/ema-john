@@ -3,7 +3,7 @@ import React from "react";
 const ReviewItem = ({ product, handelProductRemove }) => {
   console.log(handelProductRemove);
   // console.log(props);
-  const { name, quantity, img, stock, key } = product;
+  const { name, quantity, img, stock, key, price } = product;
   const itemStyle = {
     borderBottom: "1px solid lightgray",
     padding: "10px",
@@ -14,6 +14,7 @@ const ReviewItem = ({ product, handelProductRemove }) => {
     <div style={itemStyle}>
       <img src={img} alt="" />
       <h4 className="product-info">{name}</h4>
+      <p>Price : {price}</p>
       <p> Quantity {quantity}</p>
       <p>Stock : {stock}</p>
       <div className="card-btn">
